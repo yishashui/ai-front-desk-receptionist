@@ -1,0 +1,17 @@
+<!--
+  Make.com scenario: Custom Webhook (receives send_details_to_staff) → Gmail "Send an email"
+  {{1.args.*}} fields come from the webhook payload.
+  {{1.call.from_number}} is the caller ID from the phone platform.
+-->
+<p><b>DEMO - fake data only. Sunrise PACE Center AI receptionist.</b></p>
+<p>
+Call type: {{1.args.call_type}}<br>
+Participant name: {{1.args.caller_name}}<br>
+Date of birth: {{1.args.date_of_birth}}<br>
+Callback number: {{1.args.callback_number}}<br>
+Language: {{1.args.language}}<br>
+Nurse - Sick: {{1.args.nurse_sick}}<br>
+Message: {{1.args.reason}}<br>
+Caller ID: {{1.call.from_number}}
+</p>
+Sent by AI receptionist
