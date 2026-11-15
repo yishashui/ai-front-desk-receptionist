@@ -44,16 +44,18 @@ See [docs/call_flow.md](docs/call_flow.md) for the full flow diagram.
 | **"Participants," never "patients"** | Matches PACE culture and language. |
 | **Cold transfer** | Staff just want the call. The details already arrive by email, so no spoken summary is needed. |
 | **Email before transfer** | Staff see who is calling **before** they pick up. |
+| **My own cloned voice** | Native, natural Mandarin for Chinese-speaking elders. Cloned with MiniMax, which is strong in Chinese. |
 | **Callers can't easily cut off the welcome** | Phone echo was being treated as the caller talking, which cut the greeting off. I lowered interruption sensitivity so the menu finishes. |
 
 ## What testing found (and how I fixed it)
 
-Built and tested over 9 versions. Highlights:
+Built and tested over 10 versions. Highlights:
 
 - The AI **repeated the caller's details over and over** → the script had 4 places telling it to read back; reduced to one read-back.
 - The AI **said goodbye but never hung up** → the script said "end the call" but never told it to use the `end_call` function.
 - **"Transferring you now" played twice** → a "talk while waiting" setting was adding a second message.
 - A declined transfer **went to personal voicemail** → a limit of cold transfer when testing on a cell phone; letting it ring out correctly falls back to taking a message.
+- The AI **went silent after two nudges** on a dead line → the 2nd nudge now says goodbye and hangs up, with a 10-sec silence backup.
 - **Script timing didn't match reality** → the AI can't keep time from the script; silence timing is controlled by the platform's reminder setting.
 
 Full log: [docs/test_log.md](docs/test_log.md)
