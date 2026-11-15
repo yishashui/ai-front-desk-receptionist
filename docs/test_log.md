@@ -11,6 +11,7 @@ All test calls used fake data.
 | V7 | "Van ride" → "Transportation" everywhere (script, tags, email) | Clearer wording for callers and staff |
 | V8 | English + Mandarin, boosted keywords, accuracy mode, silence settings | Mandarin understanding improved; DOB, phone number and "对的" recognized correctly. Names still hard (e.g. heard as similar-sounding words). |
 | V9 | Interruption sensitivity 0.9 → 0.5; name rule (ask once more, then accept the closest guess); back to 2 languages | Phone echo had cut off the welcome message |
+| V10 | Cloned the builder's own voice (MiniMax); 2nd silence nudge now says goodbye and hangs up; end call on silence 30 → 10 sec | After 2 nudges the AI had gone idle on a silent line. Cloned voice sounds natural in Mandarin but still noticeably "AI"; expressive mode isn't available for cloned voices |
 
 ## Lessons learned
 
